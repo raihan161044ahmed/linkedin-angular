@@ -1,0 +1,28 @@
+@if (configs | async; as config) {
+      <mat-card class="example-card">
+          @if (config.hasTitle || config.hasSubTitle) {
+              <mat-card-header >
+                  @if (config.hasTitle) {
+                      <mat-card-title>{{data().title}}</mat-card-title>
+                  }
+      
+                  @if (config.hasSubTitle) {
+                      <mat-card-subtitle>{{data().subTitle}}</mat-card-subtitle>
+                  }
+                      
+              </mat-card-header>
+          }
+      
+          @if (config.hasContentParagraph) {
+              <mat-card-content>
+                  @if (data().bodyShort) {
+                      <p>{{data().bodyShort}}</p>
+                  }
+      
+                  @if (data().bodyLong) {
+                      <p>{{longText()}}</p>
+                  }
+              </mat-card-content>
+          }
+      </mat-card>
+  }
