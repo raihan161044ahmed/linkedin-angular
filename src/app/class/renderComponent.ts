@@ -16,27 +16,27 @@ export class RenderComponents {
 
   public renderComponents(componentsToRender: Configurations[]) {
     componentsToRender.forEach((comp) => {
-      let compName: Type<any>;
+      let componentName: Type<any>;
       switch (comp.componentName) {
         case 'card':
-          compName = CardComponent;
+          componentName = CardComponent;
           break;
         case 'dropDown':
-          compName = DropDownComponent;
+          componentName = DropDownComponent;
           break;
         case 'searchBox':
-          compName = SearchBoxComponent;
+          componentName = SearchBoxComponent;
           break;
         case 'pagination':
-          compName = PaginationComponent;
+          componentName = PaginationComponent;
           break;
         case 'table':
-          compName = TableComponent;
+          componentName = TableComponent;
           break;
         default:
-          compName = TableComponent;
+          componentName = TableComponent;
       }
-      this.viewContainer.createComponent(compName);
+      this.viewContainer.createComponent(componentName);
     });
   }
 }
